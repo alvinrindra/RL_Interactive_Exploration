@@ -8,18 +8,19 @@ Created on Wed Nov 20 12:43:35 2015
 # Libraries Declaration
 import numpy as np
 import matplotlib.pyplot as plt
-from classes import Variables
+from classes.Variables import *
 from classes.Scenario import Scenario
 from classes.Agent import Agent
 from classes.DataFiles import DataFiles
+import code
 
 resultsFolder = 'results/'
 files = DataFiles()
-NUMBER_AGENTS = 30
-NUMBER_EPISODES = 1000
+NUMBER_AGENTS = 5
+NUMBER_EPISODES = 100
 
 # optimal mistake correcting importance threshold
-importancethreshold =  0.0
+# importancethreshold =  0.0
 
 def setupRewardsPlot():
     dataRL = np.genfromtxt(resultsFolder + 'rewardsRL.csv', delimiter=',')
@@ -185,7 +186,8 @@ if __name__ == "__main__":
     episodes = NUMBER_EPISODES
 
     scenario = Scenario()
-
+    code.interact(banner="Start", local=locals(), exitmsg="End")
+    
     # Training with autonomous RL
     print('RL is now training the teacher agent with autonomous RL')
     teacherAgent = trainAgent(tries, episodes, scenario)
