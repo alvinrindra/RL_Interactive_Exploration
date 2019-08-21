@@ -6,7 +6,7 @@ Created on Fri Nov 6 17:43:35 2015
 """
 
 import numpy as np
-import Variables
+from classes import Variables
 
 class Agent(object):
 
